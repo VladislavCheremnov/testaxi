@@ -8,6 +8,6 @@
  
      function dbQuery(string $query)
      {
-         return mysqli_query($GLOBALS['link'], $query);
+        return mysqli_real_query($GLOBALS['link'], $query);
      }
 ?>

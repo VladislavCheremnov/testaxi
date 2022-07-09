@@ -2,15 +2,16 @@
     require_once('modules/db.php');
     require_once('modules/upload.php');
     require_once('modules/validation.php');
-
-    image_upload();  
-    file_upload();  
-
     
-    if(isset($_POST['submit'])){
-        $errors = validation();
-        if (!empty($errors)) echo $errors;      
+    //image_upload();  
+    //file_upload();  
 
+
+    if(isset($_POST['name'])){
+        
+        //$errors = validation();
+        if (!empty($errors)) echo $errors;      
+        
         $name = trim($_POST['name']);
         $surname = trim($_POST['surname']);
         $birthday = $_POST['birthday'];
@@ -18,9 +19,9 @@
         $email = trim($_POST['email']);
         $site = trim($_POST['site']);
         $phone = trim($_POST['phone']);
-            
-
-        dbQuery("INSERT INTO users SET name='".$name."', surname='".$surname."', birthday='".$birthday."', email='".$email."', site='".$site."', phone='".$phone."'");
+        $result = dbQuery("INSERT INTO users SET name='".$name."', surname='".$surname."', birthday='".$birthday."', email='".$email."', site='".$site."', phone='".$phone."'");
+        var_dump(12);
+        var_dump("INSERT INTO users SET name='".$name."', surname='".$surname."', birthday='".$birthday."', email='".$email."', site='".$site."', phone='".$phone."'");
         echo 'Спасибо!';
     }
 

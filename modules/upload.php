@@ -9,7 +9,8 @@
         
         if($file_size > 0) 
         {
-           return move_uploaded_file($file_tmp, "/opt/lampp/htdocs/axitest/img/".$file_name);
+            move_uploaded_file($file_tmp, "/opt/lampp/htdocs/axitest/img/".$file_name);
+            var_dump(move_uploaded_file($file_tmp, "/opt/lampp/htdocs/axitest/img/".$file_name));
         }
     }
 
@@ -23,7 +24,7 @@
         if($file_size > 0) 
         {
             if($file_size < 8388608){
-                return move_uploaded_file($file_tmp, "/opt/lampp/htdocs/axitest/files/".$file_name);
+                move_uploaded_file($file_tmp, "/opt/lampp/htdocs/axitest/files/".$file_name);
             } else {
                 echo "Размер файла не должен превышать 1мб";
             }
